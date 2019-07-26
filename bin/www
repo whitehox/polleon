@@ -9,7 +9,7 @@ process.env = JSON.parse(JSON.stringify(process.env));
 const app = require('../dist/app').default;
 const debug = require('debug')('polleon:server');
 const http = require('http');
-
+const mongoose = require('mongoose');
 /**
  * Get port from environment and store in Express.
  */
@@ -22,6 +22,16 @@ app.set('port', port);
  */
 
 const server = http.createServer(app);
+
+/**
+ * MongoDB set up
+ */
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, () => {
+  console.log('Database connected');
+});
+mongoose.connection.on('Connected', mongoDBConnected);
+mongoose.connection.on('Disconnected', mongoDBDisconnected);
+mongoose.connection.on('Error', mongoDBErrored);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -85,4 +95,16 @@ function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
   debug('Listening on ' + bind);
+}
+
+function mongoDBConnected() {
+  debug('MongoDB has successfully connected');
+}
+
+function mongoDBDisconnected() {
+  debug('MongoDB has successfully disconnected');
+}
+
+function mongoDBErrored() {
+  debug('An error occured!.Please check your connection');
 }
