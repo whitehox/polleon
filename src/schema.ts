@@ -21,6 +21,78 @@ const EventType = new GraphQLObjectType({
       type: GraphQLString,
       description: 'The events title',
       resolve: source => source.title
+    },
+    description: {
+      type: GraphQLString,
+      description: 'The event description',
+      resolve: source => source.description
+    },
+    category: {
+      type: GraphQLString,
+      description: 'The event category',
+      resolve: source => source.category
+    }
+  })
+});
+
+const UserTypes = new GraphQLObjectType({
+  name: 'UserType',
+  description: 'The user type',
+  fields: () => ({
+    firstname: {
+      type: GraphQLString,
+      description: 'The users firstname'
+    },
+    lastname: {
+      type: GraphQLString,
+      description: 'The user lastname'
+    },
+    username: {
+      type: GraphQLString,
+      description: 'The users username'
+    },
+    email: {
+      type: GraphQLString,
+      description: 'The users email address'
+    },
+    password: {
+      type: GraphQLString,
+      description: 'The users description'
+    },
+    profilePicture: {
+      type: GraphQLString,
+      description: 'The users profile Picture'
+    }
+  })
+});
+
+const UserInput = new GraphQLInputObjectType({
+  name: 'UserInput',
+  description: 'The user type',
+  fields: () => ({
+    firstname: {
+      type: GraphQLString,
+      description: 'The users firstname'
+    },
+    lastname: {
+      type: GraphQLString,
+      description: 'The user lastname'
+    },
+    username: {
+      type: GraphQLString,
+      description: 'The users username'
+    },
+    email: {
+      type: GraphQLString,
+      description: 'The users email address'
+    },
+    password: {
+      type: GraphQLString,
+      description: 'The users description'
+    },
+    profilePicture: {
+      type: GraphQLString,
+      description: 'The users profile Picture'
     }
   })
 });
