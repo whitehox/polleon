@@ -3,7 +3,8 @@ import {
   GraphQLObjectType,
   GraphQLID,
   GraphQLString,
-  GraphQLList
+  GraphQLList,
+  GraphQLInputObjectType
 } from 'graphql';
 import { getAllEvents } from './controllers';
 
