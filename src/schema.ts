@@ -104,7 +104,22 @@ const query = new GraphQLObjectType({
     allEvents: {
       type: new GraphQLList(EventType),
       description: 'All events type',
-      resolve: () => getAllEvents()
+      resolve: () => getEvents()
+    }
+  })
+});
+
+const mutation = new GraphQLObjectType({
+  name: 'CreateUser',
+  description: 'Create a polleon user',
+  fields: () => ({
+    createUser: {
+      type: UserTypes,
+      description: 'Create a new user',
+      args: {
+        input: { type: UserInput, description: 'The users input' }
+      },
+      resolve: (_, args) => createUser(args.input)
     }
   })
 });
