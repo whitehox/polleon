@@ -101,7 +101,7 @@ const query = new GraphQLObjectType({
   name: 'EventQuery',
   description: 'Get all events',
   fields: () => ({
-    allContacts: {
+    allEvents: {
       type: new GraphQLList(EventType),
       description: 'All events type',
       resolve: () => getAllEvents()
