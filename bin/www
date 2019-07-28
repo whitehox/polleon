@@ -26,8 +26,12 @@ const server = http.createServer(app);
 /**
  * MongoDB set up
  */
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, () => {
-  console.log('Database connected');
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, error => {
+  if (error) {
+    debug(error);
+    return;
+  }
+  debug('MongoDB successfully connected');
 });
 mongoose.connection.on('Connected', mongoDBConnected);
 mongoose.connection.on('Disconnected', mongoDBDisconnected);
