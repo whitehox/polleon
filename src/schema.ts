@@ -6,7 +6,7 @@ import {
   GraphQLList,
   GraphQLInputObjectType
 } from 'graphql';
-import { getAllEvents } from './controllers';
+import { getEvents, createUser } from './controllers';
 
 const EventType = new GraphQLObjectType({
   name: 'EventType',
