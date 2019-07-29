@@ -10,4 +10,4 @@ const EventSchema = new mongoose.Schema({
   votes_per_contestant: Number
 });
 
-export default mongoose.model<EventModel>("Event", EventSchema);
+export default mongoose.model<EventModel>('Event', EventSchema);
