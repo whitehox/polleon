@@ -1,8 +1,10 @@
-import createError from 'http-errors';
-import express from 'express';
-import path from 'path';
-import cookieParser from 'cookie-parser';
-import logger from 'morgan';
+import createError from "http-errors";
+import express from "express";
+import path from "path";
+import cookieParser from "cookie-parser";
+import logger from "morgan";
+import graphqlHTTP from "express-graphql";
+import schema from "./schema";
 
 import indexRouter from './routes/index';
 
