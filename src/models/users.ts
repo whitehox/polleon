@@ -10,6 +10,7 @@ const UserSchema = new mongoose.Schema({
   email: String,
   phone_number: String,
   password: String,
+  account_type: String,
   created_at: String
 });
 
