@@ -21,6 +21,7 @@ export interface UserType {
   email: string;
   phone_number?: string;
   password: string;
+  account_Type: string;
   created_at: Date;
 }
 
