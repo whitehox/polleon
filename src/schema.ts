@@ -111,6 +111,12 @@ const mutation = new GraphQLObjectType({
       description: 'Add event',
       args: { input: { type: EventInput, description: 'Event input' } },
       resolve: (_, args) => addEvent(args.inpute)
+    },
+    addUsers: {
+      type: UserType,
+      description: 'Add user',
+      args: { input: { type: UserInput, description: 'The user information' } },
+      resolve: (_, args) => addUser(args.input)
     }
   })
 });
