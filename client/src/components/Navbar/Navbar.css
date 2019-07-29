@@ -1,0 +1,27 @@
+.mainHeader {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainHeader ul li {
+  display: inline-block;
+}
+.mainHeader ul li a {
+  font-size: 15px;
+  font-weight: bold;
+  color: #252525;
+  padding: 0 20px;
+  text-decoration: none;
+}
+.mainHeader ul li a i {
+  color: #cf057c;
+}
+.mainHeader ul li.headerButton a {
+  color: #4125dd;
+  border: 2px solid #4125dd;
+  transition: all 0.4s;
+  padding: 8px 30px !important;
+  border-radius: 28px;
+}
