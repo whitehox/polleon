@@ -10,7 +10,6 @@ const app = require('../dist/app').default;
 const debug = require('debug')('polleon:server');
 const http = require('http');
 const mongoose = require('mongoose');
-
 /**
  * Get port from environment and store in Express.
  */

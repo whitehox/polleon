@@ -1,7 +1,7 @@
-import Event from '../models/events';
-import User from '../models/users';
+import Event from "../models/events";
+import User from "../models/users";
 
-import { EventInput, UserType } from '../typings';
+import { EventInput, UserType } from "../typings";
 
 export function getEvents() {
   return Event.find();
