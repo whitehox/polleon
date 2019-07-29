@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import { EventModel } from "../typings";
+import mongoose from 'mongoose';
+import { EventModel } from '../typings';
 
 const EventSchema = new mongoose.Schema({
   user_id: String,
