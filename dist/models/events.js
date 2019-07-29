@@ -8,7 +8,11 @@ const EventSchema = new mongoose_1.default.Schema({
     title: String,
     description: String,
     start_date: Date,
-    end_date: Date
+    end_date: Date,
+    votes_per_contestant: Number,
+    event_type: String,
+    category_id: String,
+    created_at: Date
 });
-exports.default = mongoose_1.default.model("Event", EventSchema);
+exports.default = mongoose_1.default.model('Event', EventSchema);
 //# sourceMappingURL=events.js.map

@@ -1,13 +1,13 @@
 import { Document } from 'mongoose';
 
 export interface EventType {
-  user_id: string;
   title: string;
   description: string;
-  start_date: string;
-  end_date: string;
+  start_date: Date;
+  end_date: Date;
   votes_per_contestant: number;
   event_type: string;
+  category_id: string;
   created_at: Date;
 }
 
@@ -24,4 +24,21 @@ export interface UserType {
   created_at: Date;
 }
 
+export interface CategoryType {
+  category_id: string;
+  name: string;
+}
+
+export interface EventInput {
+  title: string;
+  description: string;
+  start_date: Date;
+  end_date: Date;
+  votes_per_contestant: number;
+  event_type: string;
+  category_id: string;
+  created_at: Date;
+}
+
 export interface EventModel extends EventType, Document {}
+export interface UserModel extends UserType, Document {}

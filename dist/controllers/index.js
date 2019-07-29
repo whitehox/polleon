@@ -8,4 +8,9 @@ function getEvents() {
     return events_1.default.find();
 }
 exports.getEvents = getEvents;
+function addEvent(eventInput) {
+    const event = new events_1.default(eventInput);
+    return event.save();
+}
+exports.addEvent = addEvent;
 //# sourceMappingURL=index.js.map
