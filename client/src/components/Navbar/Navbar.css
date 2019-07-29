@@ -1,0 +1,18 @@
+.mainHeader {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainHeader ul li {
+  display: inline-block;
+  padding: 0 20px;
+}
+.mainHeader ul li a {
+  font-size: 15px;
+  font-weight: bold;
+  color: #252525;
+  padding: 0 10px;
+  text-decoration: none;
+}
