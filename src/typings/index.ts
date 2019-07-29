@@ -12,7 +12,6 @@ export interface EventType {
 }
 
 export interface UserType {
-  user_id: string;
   firstname: string;
   lastname: string;
   username: string;
