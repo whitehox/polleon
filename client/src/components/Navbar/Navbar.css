@@ -9,18 +9,18 @@
   display: inline-block;
 }
 .mainHeader ul li a {
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
   color: #252525;
   padding: 0 20px;
   text-decoration: none;
 }
 .mainHeader ul li a i {
-  color: #cf057c;
+  color: #c62828;
 }
 .mainHeader ul li.headerButton a {
-  color: #4125dd;
-  border: 2px solid #4125dd;
+  color: #c62828;
+  border: 2px solid #c62828;
   transition: all 0.4s;
   padding: 5px 30px !important;
   border-radius: 28px;
