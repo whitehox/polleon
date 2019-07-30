@@ -1,0 +1,65 @@
+.mainFooter {
+  width: 100%;
+  background: #fff;
+  padding: 30px 0;
+  margin: 50px auto 0 auto;
+}
+.mainFooterStuffs {
+  width: 100%;
+  background: #fff;
+  padding: 50px 0;
+  margin: 50px auto 0 auto;
+  display: flex;
+}
+.footerLogo {
+  display: flex;
+  flex: 0 0 50%;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #f1f1f1;
+}
+.footerLogo p {
+  font-size: 3vw;
+  color: #000;
+  font-style: italic;
+}
+.quickLinks {
+  display: flex;
+  flex: 0 0 50%;
+  justify-content: center;
+  align-items: center;
+}
+.quickLinks ul li {
+  display: block;
+  padding: 10px 20px;
+}
+.quickLinks ul li a {
+  text-decoration: none;
+  color: #000;
+}
+.newsLetter {
+  width: 50%;
+  border: 1px solid #f1f1f1;
+  border-radius: 30px;
+  margin: 10px auto;
+  padding: 0 0 0 20px;
+  position: relative;
+}
+.newsLetter input {
+  width: 85%;
+  border: none;
+  padding: 20px 10px;
+  outline: none;
+  font-size: 12px;
+}
+.newsLetter button {
+  padding: 20px 30px;
+  position: absolute;
+  right: -20px;
+  border-radius: 30px;
+  color: #fff;
+  background: #c62828;
+  outline: none;
+  border: none;
+  font-size: 12px;
+}
