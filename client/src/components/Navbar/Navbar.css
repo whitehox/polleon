@@ -7,20 +7,11 @@
 }
 .mainHeader ul li {
   display: inline-block;
-<<<<<<< HEAD
-  padding: 0 20px;
-=======
->>>>>>> b4c08922f7c7ef43f9ded343a908b113dfc24571
 }
 .mainHeader ul li a {
   font-size: 15px;
   font-weight: bold;
   color: #252525;
-<<<<<<< HEAD
-  padding: 0 10px;
-  text-decoration: none;
-}
-=======
   padding: 0 20px;
   text-decoration: none;
 }
@@ -31,7 +22,7 @@
   color: #4125dd;
   border: 2px solid #4125dd;
   transition: all 0.4s;
-  padding: 8px 30px !important;
+  padding: 5px 30px !important;
   border-radius: 28px;
+  font-weight: 500;
 }
->>>>>>> b4c08922f7c7ef43f9ded343a908b113dfc24571
