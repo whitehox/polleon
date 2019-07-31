@@ -41,7 +41,7 @@ function Login() {
           <SignupForm formDisplay={formDisplayHandler} />
         )}
         <div className="loginImage">
-          <img alt="polleon login" src="assets/img/fogg-welcome-3.png" />
+          <img alt="polleon login" src="assets/img/loginsignup.png" />
         </div>
       </Card>
       <Footer />
