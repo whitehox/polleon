@@ -32,7 +32,7 @@ export const REGISTER = gql`
 export const getUser = gql`
   {
     allUsers {
-      name
+      lastname
     }
   }
 `;
