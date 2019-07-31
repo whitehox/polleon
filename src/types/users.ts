@@ -61,6 +61,39 @@ export const UserType = new GraphQLObjectType({
   })
 });
 
+export const EmailType = new GraphQLObjectType({
+  name: 'EmailType',
+  description: 'The users email',
+  fields: () => ({
+    email: {
+      type: GraphQLString,
+      description: 'The users email',
+      resolve: source => source.email
+    },
+    firstname: {
+      type: GraphQLString,
+      description: 'The users firstname',
+      resolve: source => source.firstname
+    },
+    _id: {
+      type: GraphQLID,
+      description: 'The users ID',
+      resolve: source => source._id
+    }
+  })
+});
+
+export const EmailInput = new GraphQLInputObjectType({
+  name: 'EmailInput',
+  description: 'The users email input',
+  fields: () => ({
+    email: {
+      type: GraphQLString,
+      description: 'The users email input'
+    }
+  })
+});
+
 export const UserInput = new GraphQLInputObjectType({
   name: 'UserInput',
   description: 'Users type',
