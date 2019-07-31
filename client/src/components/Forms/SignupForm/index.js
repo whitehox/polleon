@@ -101,4 +101,4 @@ function SignupForm(props) {
   );
 }
 
-export default graphql(getUser)(SignupForm);
+export default compose(graphql(REGISTER, { name: 'registerUser' }))(SignupForm);
