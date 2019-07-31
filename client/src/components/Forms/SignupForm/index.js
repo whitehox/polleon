@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import hash from 'password-hash';
 
-import { graphql } from 'react-apollo';
-import { getUser } from '../../../queries/queries';
+import { graphql, compose } from 'react-apollo';
+import { REGISTER } from '../../../queries/queries';
 
 function SignupForm(props) {
   const [firstname, setfirstname] = useState('');
@@ -14,15 +14,13 @@ function SignupForm(props) {
   const [created_at, setCreatedAt] = useState(new Date().toLocaleString());
 
   const [input, setIntup] = useState({});
-  console.log(props);
   useEffect(() => {
     setCreatedAt(new Date().toLocaleString());
-    password = hash.generate(password);
     setIntup({
       firstname,
       lastname,
       username,
-      password,
+      password: hash.generate(password),
       email,
       checked,
       created_at
@@ -31,6 +29,9 @@ function SignupForm(props) {
 
   const submitFormHandler = e => {
     e.preventDefault();
+    props.registerUser({
+      variables: { ...input }
+    });
   };
 
   return (
@@ -98,4 +99,4 @@ function SignupForm(props) {
   );
 }
 
-export default graphql(getUser)(SignupForm);
+export default compose(graphql(REGISTER, { name: 'registerUser' }))(SignupForm);

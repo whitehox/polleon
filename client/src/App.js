@@ -1,17 +1,28 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
+
+//Apollo client
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
+
 import Home from './components/Home';
 import Login from './components/Login/index';
 
+const client = new ApolloClient({
+  uri: 'http://localhost:3005/graphql'
+});
+
 const App = () => {
   return (
-    <>
-      <Router>
-        <Route path="/" exact component={Home} />
-        <Route path="/login" component={Login} />
-      </Router>
-    </>
+    <ApolloProvider client={client}>
+      <>
+        <Router>
+          <Route path="/" exact component={Home} />
+          <Route path="/login" component={Login} />
+        </Router>
+      </>
+    </ApolloProvider>
   );
 };
 
