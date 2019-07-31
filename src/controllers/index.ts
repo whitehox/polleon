@@ -28,7 +28,3 @@ export async function addUser(userInput: UserType) {
   const user = new User(userInput);
   return user.save();
 }
-
-export function getUsers() {
-  return User.find();
-}
