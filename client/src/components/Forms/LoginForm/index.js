@@ -2,11 +2,7 @@ import React from 'react';
 
 import './LoginForm.css';
 
-interface LoginProp {
-  formDisplay: object;
-}
-
-function LoginForm(props: any) {
+function LoginForm(props) {
   return (
     <div className="loginFormArea">
       <h1>Polleon</h1>

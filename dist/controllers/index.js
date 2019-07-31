@@ -14,13 +14,21 @@ function addEvent(eventInput) {
     return event.save();
 }
 exports.addEvent = addEvent;
-function addUser(userInput) {
-    const user = new users_1.default(userInput);
-    return user.save();
-}
-exports.addUser = addUser;
 function getUsers() {
     return users_1.default.find();
 }
 exports.getUsers = getUsers;
+function getSingleUser(email) {
+    return users_1.default.findOne(email);
+}
+exports.getSingleUser = getSingleUser;
+async function addUser(userInput) {
+    const dbCheck = await users_1.default.findOne({ email: userInput.email });
+    if (dbCheck) {
+        throw new Error('This user already exist');
+    }
+    const user = new users_1.default(userInput);
+    return user.save();
+}
+exports.addUser = addUser;
 //# sourceMappingURL=index.js.map

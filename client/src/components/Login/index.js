@@ -15,16 +15,14 @@ import Navbar from '../Navbar';
 function Login() {
   const [formState, setFormState] = useState(true);
 
-  const formDisplayHandler = (event: React.MouseEvent<HTMLElement>) => {
+  const formDisplayHandler = event => {
     event.preventDefault();
     setFormState(!formState);
   };
 
-  console.log(formState);
-
   const cardStyle = {
     width: '70%',
-    margin: 'auto',
+    margin: '30px auto 0 auto',
     background: '#FFF',
     boxShadow: '0 22px 80px rgba(0, 0, 0, 0.19)',
     borderRadius: '4px',
@@ -41,7 +39,7 @@ function Login() {
           <SignupForm formDisplay={formDisplayHandler} />
         )}
         <div className="loginImage">
-          <img alt="polleon login" src="assets/img/fogg-welcome-3.png" />
+          <img alt="polleon login" src="assets/img/loginsignup.png" />
         </div>
       </Card>
       <Footer />

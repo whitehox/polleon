@@ -1,4 +1,4 @@
-import { Document } from "mongoose";
+import { Document } from 'mongoose';
 
 export interface EventType {
   title: string;
@@ -8,7 +8,7 @@ export interface EventType {
   votes_per_contestant: number;
   event_type: string;
   category_id: string;
-  created_at: Date;
+  created_at: string;
 }
 
 export interface UserType {
@@ -21,7 +21,7 @@ export interface UserType {
   phone_number?: string;
   password: string;
   account_Type: string;
-  created_at: Date;
+  created_at: string;
 }
 
 export interface CategoryType {
@@ -37,7 +37,7 @@ export interface EventInput {
   votes_per_contestant: number;
   event_type: string;
   category_id: string;
-  created_at: Date;
+  created_at: string;
 }
 
 export interface EventModel extends EventType, Document {}

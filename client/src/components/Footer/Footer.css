@@ -19,9 +19,9 @@
   border-right: 1px solid #f1f1f1;
 }
 .footerLogo p {
-  font-size: 3vw;
+  font-size: 3.5vw;
   color: #000;
-  font-style: italic;
+  font-family: 'Righteous', cursive;
 }
 .quickLinks {
   display: flex;
@@ -53,12 +53,12 @@
   font-size: 12px;
 }
 .newsLetter button {
-  padding: 20px 30px;
+  padding: 20px 40px;
   position: absolute;
   right: -20px;
   border-radius: 30px;
   color: #fff;
-  background: #c62828;
+  background: #cd2244;
   outline: none;
   border: none;
   font-size: 12px;

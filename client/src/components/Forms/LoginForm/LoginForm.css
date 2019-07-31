@@ -6,7 +6,9 @@ p {
   padding: 70px 0;
   /* border-right: 1px solid #f1f1f1; */
 }
-
+.loginFormArea h1 {
+  font-family: 'Righteous', cursive;
+}
 .loginFormArea input {
   padding: 20px;
   width: 90%;
@@ -15,6 +17,11 @@ p {
   outline: none;
   border-bottom: 1px solid #f1f1f1;
   font-size: 12px;
+  transition: all linear 0.2s;
+}
+.loginFormArea input:focus {
+  box-shadow: 0 5px 5px -5px #ccc;
+  transition: all linear 0.2s;
 }
 .loginFormArea input[type='checkbox'] {
   width: fit-content;
@@ -24,7 +31,7 @@ p {
   color: #707070;
 }
 .loginFormArea button {
-  background: #c62828;
+  background: #cd2244;
   padding: 10px 30px;
   border: none;
   border-radius: 30px;

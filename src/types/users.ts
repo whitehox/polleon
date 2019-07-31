@@ -2,7 +2,7 @@
  * GraphQL user schema types
  */
 
-import { GraphQLObjectType } from 'graphql';
+import { GraphQLObjectType, GraphQLID } from 'graphql';
 import { GraphQLString } from 'graphql';
 import { GraphQLInputObjectType } from 'graphql';
 
@@ -10,11 +10,6 @@ export const UserType = new GraphQLObjectType({
   name: 'UserType',
   description: 'Users type',
   fields: () => ({
-    username: {
-      type: GraphQLString,
-      description: 'The username',
-      resolve: source => source.username
-    },
     firstname: {
       type: GraphQLString,
       description: 'The users firstname',
@@ -24,6 +19,11 @@ export const UserType = new GraphQLObjectType({
       type: GraphQLString,
       description: 'The users lastname',
       resolve: source => source.lastname
+    },
+    username: {
+      type: GraphQLString,
+      description: 'The username',
+      resolve: source => source.username
     },
     company_name: {
       type: GraphQLString,
@@ -56,14 +56,43 @@ export const UserType = new GraphQLObjectType({
   })
 });
 
+export const EmailType = new GraphQLObjectType({
+  name: 'EmailType',
+  description: 'The users email',
+  fields: () => ({
+    email: {
+      type: GraphQLString,
+      description: 'The users email',
+      resolve: source => source.email
+    },
+    firstname: {
+      type: GraphQLString,
+      description: 'The users firstname',
+      resolve: source => source.firstname
+    },
+    _id: {
+      type: GraphQLID,
+      description: 'The users ID',
+      resolve: source => source._id
+    }
+  })
+});
+
+export const EmailInput = new GraphQLInputObjectType({
+  name: 'EmailInput',
+  description: 'The users email input',
+  fields: () => ({
+    email: {
+      type: GraphQLString,
+      description: 'The users email input'
+    }
+  })
+});
+
 export const UserInput = new GraphQLInputObjectType({
   name: 'UserInput',
   description: 'Users type',
   fields: () => ({
-    username: {
-      type: GraphQLString,
-      description: 'The username'
-    },
     firstname: {
       type: GraphQLString,
       description: 'The users firstname'
@@ -71,6 +100,10 @@ export const UserInput = new GraphQLInputObjectType({
     lastname: {
       type: GraphQLString,
       description: 'The users lastname'
+    },
+    username: {
+      type: GraphQLString,
+      description: 'The username'
     },
     company_name: {
       type: GraphQLString,

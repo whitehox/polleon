@@ -10,11 +10,6 @@ exports.UserType = new graphql_1.GraphQLObjectType({
     name: 'UserType',
     description: 'Users type',
     fields: () => ({
-        username: {
-            type: graphql_2.GraphQLString,
-            description: 'The username',
-            resolve: source => source.username
-        },
         firstname: {
             type: graphql_2.GraphQLString,
             description: 'The users firstname',
@@ -24,6 +19,11 @@ exports.UserType = new graphql_1.GraphQLObjectType({
             type: graphql_2.GraphQLString,
             description: 'The users lastname',
             resolve: source => source.lastname
+        },
+        username: {
+            type: graphql_2.GraphQLString,
+            description: 'The username',
+            resolve: source => source.username
         },
         company_name: {
             type: graphql_2.GraphQLString,
@@ -55,14 +55,41 @@ exports.UserType = new graphql_1.GraphQLObjectType({
         }
     })
 });
+exports.EmailType = new graphql_1.GraphQLObjectType({
+    name: 'EmailType',
+    description: 'The users email',
+    fields: () => ({
+        email: {
+            type: graphql_2.GraphQLString,
+            description: 'The users email',
+            resolve: source => source.email
+        },
+        firstname: {
+            type: graphql_2.GraphQLString,
+            description: 'The users firstname',
+            resolve: source => source.firstname
+        },
+        _id: {
+            type: graphql_1.GraphQLID,
+            description: 'The users ID',
+            resolve: source => source._id
+        }
+    })
+});
+exports.EmailInput = new graphql_3.GraphQLInputObjectType({
+    name: 'EmailInput',
+    description: 'The users email input',
+    fields: () => ({
+        email: {
+            type: graphql_2.GraphQLString,
+            description: 'The users email input'
+        }
+    })
+});
 exports.UserInput = new graphql_3.GraphQLInputObjectType({
     name: 'UserInput',
     description: 'Users type',
     fields: () => ({
-        username: {
-            type: graphql_2.GraphQLString,
-            description: 'The username'
-        },
         firstname: {
             type: graphql_2.GraphQLString,
             description: 'The users firstname'
@@ -70,6 +97,10 @@ exports.UserInput = new graphql_3.GraphQLInputObjectType({
         lastname: {
             type: graphql_2.GraphQLString,
             description: 'The users lastname'
+        },
+        username: {
+            type: graphql_2.GraphQLString,
+            description: 'The username'
         },
         company_name: {
             type: graphql_2.GraphQLString,
