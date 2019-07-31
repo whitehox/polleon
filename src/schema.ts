@@ -10,13 +10,24 @@ import {
 import { UserType, UserInput, EmailType, EmailInput } from './types/users';
 
 const query = new GraphQLObjectType({
-  name: "PolleonQuery",
-  description: "Query Polleon database",
+  name: 'PolleonQuery',
+  description: 'Query Polleon database',
   fields: () => ({
     allEvents: {
       type: GraphQLList(EventType),
-      description: "Get all event types",
+      description: 'Get all event types',
       resolve: () => getEvents()
+    },
+    allUsers: {
+      type: GraphQLList(UserType),
+      description: 'Get all users',
+      resolve: () => getUsers()
+    },
+    getSingleUser: {
+      type: EmailType,
+      description: 'Get a single user',
+      args: { email: { type: EmailInput, description: 'The users email' } },
+      resolve: (_, args) => getSingleUser(args.email)
     }
   })
 });
