@@ -22,7 +22,7 @@ function SignupForm(props) {
       firstname,
       lastname,
       username,
-      password,
+      password: hash.generate(password),
       email,
       checked,
       created_at
