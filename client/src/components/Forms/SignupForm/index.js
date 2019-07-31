@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import hash from 'password-hash';
 
-import { graphql } from 'react-apollo';
-import { getUser } from '../../../queries/queries';
+import { graphql, compose } from 'react-apollo';
+import { REGISTER } from '../../../queries/queries';
 
 function SignupForm(props) {
   const [firstname, setfirstname] = useState('');
@@ -31,6 +31,9 @@ function SignupForm(props) {
 
   const submitFormHandler = e => {
     e.preventDefault();
+    props.registerUser({
+      variables: { ...input }
+    });
   };
 
   return (
