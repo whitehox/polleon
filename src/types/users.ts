@@ -10,11 +10,6 @@ export const UserType = new GraphQLObjectType({
   name: 'UserType',
   description: 'Users type',
   fields: () => ({
-    username: {
-      type: GraphQLString,
-      description: 'The username',
-      resolve: source => source.username
-    },
     firstname: {
       type: GraphQLString,
       description: 'The users firstname',
