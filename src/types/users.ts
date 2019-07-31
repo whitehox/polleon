@@ -98,10 +98,6 @@ export const UserInput = new GraphQLInputObjectType({
   name: 'UserInput',
   description: 'Users type',
   fields: () => ({
-    username: {
-      type: GraphQLString,
-      description: 'The username'
-    },
     firstname: {
       type: GraphQLString,
       description: 'The users firstname'
