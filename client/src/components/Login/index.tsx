@@ -20,8 +20,6 @@ function Login() {
     setFormState(!formState);
   };
 
-  console.log(formState);
-
   const cardStyle = {
     width: '70%',
     margin: 'auto',
