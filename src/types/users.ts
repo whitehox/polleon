@@ -2,7 +2,7 @@
  * GraphQL user schema types
  */
 
-import { GraphQLObjectType } from 'graphql';
+import { GraphQLObjectType, GraphQLID } from 'graphql';
 import { GraphQLString } from 'graphql';
 import { GraphQLInputObjectType } from 'graphql';
 
@@ -24,6 +24,11 @@ export const UserType = new GraphQLObjectType({
       type: GraphQLString,
       description: 'The users lastname',
       resolve: source => source.lastname
+    },
+    username: {
+      type: GraphQLString,
+      description: 'The username',
+      resolve: source => source.username
     },
     company_name: {
       type: GraphQLString,
