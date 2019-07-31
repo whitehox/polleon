@@ -16,14 +16,14 @@ const query = new GraphQLObjectType({
 });
 
 const mutation = new GraphQLObjectType({
-  name: "PolleonMutation",
-  description: "Mutate polleon database",
+  name: 'PolleonMutation',
+  description: 'Mutate polleon database',
   fields: () => ({
     addEvents: {
       type: EventType,
-      description: "Add event",
-      args: { input: { type: EventInput, description: "Event input" } },
-      resolve: (_, args) => addEvent(args.inpute)
+      description: 'Add event',
+      args: { input: { type: EventInput, description: 'Event input' } },
+      resolve: (_, args) => addEvent(args.input)
     },
     addUsers: {
       type: UserType,
