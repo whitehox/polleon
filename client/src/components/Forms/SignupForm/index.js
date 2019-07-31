@@ -14,10 +14,8 @@ function SignupForm(props) {
   const [created_at, setCreatedAt] = useState(new Date().toLocaleString());
 
   const [input, setIntup] = useState({});
-  console.log(props);
   useEffect(() => {
     setCreatedAt(new Date().toLocaleString());
-    password = hash.generate(password);
     setIntup({
       firstname,
       lastname,
