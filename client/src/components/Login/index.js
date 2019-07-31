@@ -15,14 +15,14 @@ import Navbar from '../Navbar';
 function Login() {
   const [formState, setFormState] = useState(true);
 
-  const formDisplayHandler = (event: React.MouseEvent<HTMLElement>) => {
+  const formDisplayHandler = event => {
     event.preventDefault();
     setFormState(!formState);
   };
 
   const cardStyle = {
     width: '70%',
-    margin: 'auto',
+    margin: '30px auto 0 auto',
     background: '#FFF',
     boxShadow: '0 22px 80px rgba(0, 0, 0, 0.19)',
     borderRadius: '4px',
