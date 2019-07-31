@@ -1,7 +1,13 @@
-import { GraphQLSchema, GraphQLObjectType, GraphQLList } from "graphql";
-import { EventType, EventInput } from "./types/events";
-import { getEvents, addEvent, addUser } from "./controllers";
-import { UserType, UserInput } from "./types/users";
+import { GraphQLSchema, GraphQLObjectType, GraphQLList } from 'graphql';
+import { EventType, EventInput } from './types/events';
+import {
+  getEvents,
+  addEvent,
+  addUser,
+  getSingleUser,
+  getUsers
+} from './controllers';
+import { UserType, UserInput, EmailType, EmailInput } from './types/users';
 
 const query = new GraphQLObjectType({
   name: "PolleonQuery",
