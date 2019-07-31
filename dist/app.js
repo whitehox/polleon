@@ -13,6 +13,7 @@ const schema_1 = __importDefault(require("./schema"));
 const cors_1 = __importDefault(require("cors"));
 const index_1 = __importDefault(require("./routes/index"));
 const app = express_1.default();
+app.use(cors_1.default());
 // view engine setup
 app.set('views', path_1.default.join(__dirname, '../views'));
 app.set('view engine', 'pug');
@@ -21,7 +22,6 @@ app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use(cookie_parser_1.default());
 app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
-app.use(cors_1.default());
 app.use('/api', index_1.default);
 app.use('/graphql', express_graphql_1.default({
     schema: schema_1.default,

@@ -22,22 +22,17 @@ app.set('port', port);
  */
 
 const server = http.createServer(app);
-
 /**
  * MongoDB Configuration
  */
 
-mongoose.connect(
-  'mongodb://localhost:27017/polleon',
-  { useNewUrlParser: true },
-  error => {
-    if (error) {
-      debug('An error occured while connecting to mongoDB');
-      return;
-    }
-    debug('MongoDB has successfully connected');
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, error => {
+  if (error) {
+    debug('An error occured while connecting to mongoDB');
+    return;
   }
-);
+  debug('MongoDB has successfully connected');
+});
 
 /**
  * Listen on provided port, on all network interfaces.
