@@ -16,13 +16,19 @@
   text-decoration: none;
 }
 .mainHeader ul li a i {
-  color: #c62828;
+  color: #cd2244;
 }
 .mainHeader ul li.headerButton a {
-  color: #c62828;
-  border: 2px solid #c62828;
+  color: #cd2244;
+  border: 2px solid #cd2244;
   transition: all 0.4s;
   padding: 5px 30px !important;
   border-radius: 28px;
   font-weight: 500;
+  transition: all linear 0.2s;
+}
+.mainHeader ul li.headerButton a:hover {
+  color: #fff;
+  background: #cd2244;
+  transition: all linear 0.2s;
 }
