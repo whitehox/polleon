@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ReactEventHandler } from 'react';
 import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
 import hash from 'password-hash';
@@ -60,6 +60,10 @@ function SignupForm(props: SignUp) {
     });
   }, [firstname, lastname, username, password, email, checked, created_at]);
 
+  const submitFormHandler = () => {
+    alert('Hello world');
+  };
+
   return (
     <div className="loginFormArea">
       <h1>Polleon</h1>
@@ -70,6 +74,7 @@ function SignupForm(props: SignUp) {
             onSubmit={e => {
               e.preventDefault();
               addUsers({ variables: { input } });
+              submitFormHandler();
             }}
           >
             {loading && <p>Loading...</p>}
