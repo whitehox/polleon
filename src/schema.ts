@@ -17,8 +17,6 @@ import {
   LoginInput
 } from './types/users';
 
-import jwt from 'jsonwebtoken';
-
 const query = new GraphQLObjectType({
   name: 'PolleonQuery',
   description: 'Query Polleon database',
