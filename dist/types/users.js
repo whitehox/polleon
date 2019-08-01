@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const graphql_1 = require("graphql");
 const graphql_2 = require("graphql");
 const graphql_3 = require("graphql");
+const controllers_1 = require("../controllers");
 exports.UserType = new graphql_1.GraphQLObjectType({
     name: 'UserType',
     description: 'Users type',
@@ -125,6 +126,52 @@ exports.UserInput = new graphql_3.GraphQLInputObjectType({
         created_at: {
             type: graphql_2.GraphQLString,
             description: 'Date the account was created'
+        }
+    })
+});
+exports.LoginType = new graphql_1.GraphQLObjectType({
+    name: 'LoginType',
+    description: 'The user Login type',
+    fields: () => ({
+        email: {
+            type: graphql_2.GraphQLString,
+            description: 'The user email address for login'
+        },
+        lastname: {
+            type: graphql_2.GraphQLString,
+            description: 'The users lastname'
+        },
+        username: {
+            type: graphql_2.GraphQLString,
+            description: 'The users username'
+        },
+        token: {
+            type: graphql_2.GraphQLString,
+            description: 'The authorized token',
+            resolve: (parent, _args) => {
+                return parent.message;
+            }
+        },
+        authUser: {
+            type: exports.UserType,
+            description: 'The authorized user',
+            resolve: (parent, _args) => {
+                return controllers_1.getSingleUser({ email: parent.email });
+            }
+        }
+    })
+});
+exports.LoginInput = new graphql_3.GraphQLInputObjectType({
+    name: 'LoginInput',
+    description: 'The user Login type',
+    fields: () => ({
+        email: {
+            type: graphql_2.GraphQLString,
+            description: 'The user email address for login'
+        },
+        password: {
+            type: graphql_2.GraphQLString,
+            description: 'The user password for login'
         }
     })
 });

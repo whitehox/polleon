@@ -32,8 +32,8 @@ exports.EventType = new graphql_1.GraphQLObjectType({
             type: graphql_1.GraphQLString,
             description: 'The end date of the event'
         },
-        votes_per_contestants: {
-            type: graphql_1.GraphQLString,
+        votes_per_contestant: {
+            type: graphql_1.GraphQLInt,
             description: 'Votes allowed per contestant'
         },
         event_type: {
@@ -71,8 +71,8 @@ exports.EventInput = new graphql_1.GraphQLInputObjectType({
             type: graphql_1.GraphQLString,
             description: 'The end date of the event'
         },
-        votes_per_contestants: {
-            type: graphql_1.GraphQLString,
+        votes_per_contestant: {
+            type: graphql_1.GraphQLInt,
             description: 'Votes allowed per contestant'
         },
         event_type: {

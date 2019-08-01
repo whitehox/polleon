@@ -5,6 +5,7 @@
 import { GraphQLObjectType, GraphQLID } from 'graphql';
 import { GraphQLString } from 'graphql';
 import { GraphQLInputObjectType } from 'graphql';
+import { getSingleUser } from '../controllers';
 
 export const UserType = new GraphQLObjectType({
   name: 'UserType',
@@ -128,6 +129,54 @@ export const UserInput = new GraphQLInputObjectType({
     created_at: {
       type: GraphQLString,
       description: 'Date the account was created'
+    }
+  })
+});
+
+export const LoginType = new GraphQLObjectType({
+  name: 'LoginType',
+  description: 'The user Login type',
+  fields: () => ({
+    email: {
+      type: GraphQLString,
+      description: 'The user email address for login'
+    },
+    lastname: {
+      type: GraphQLString,
+      description: 'The users lastname'
+    },
+    username: {
+      type: GraphQLString,
+      description: 'The users username'
+    },
+    token: {
+      type: GraphQLString,
+      description: 'The authorized token',
+      resolve: (parent, _args) => {
+        return parent.message;
+      }
+    },
+    authUser: {
+      type: UserType,
+      description: 'The authorized user',
+      resolve: (parent, _args) => {
+        return getSingleUser({ email: parent.email });
+      }
+    }
+  })
+});
+
+export const LoginInput = new GraphQLInputObjectType({
+  name: 'LoginInput',
+  description: 'The user Login type',
+  fields: () => ({
+    email: {
+      type: GraphQLString,
+      description: 'The user email address for login'
+    },
+    password: {
+      type: GraphQLString,
+      description: 'The user password for login'
     }
   })
 });

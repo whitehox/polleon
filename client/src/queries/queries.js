@@ -29,6 +29,21 @@ export const REGISTER = gql`
   }
 `;
 
+export const LOGIN = gql`
+  mutation userLogin($email: String!, $password: String!) {
+    userLogin(input: { email: $email, password: $password }) {
+      token
+      email
+      authUser {
+        username
+        email
+        lastname
+        firstname
+      }
+    }
+  }
+`;
+
 export const getUser = gql`
   {
     allUsers {

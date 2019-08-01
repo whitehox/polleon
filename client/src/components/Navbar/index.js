@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Navbar.css';
 function Navbar() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   return (
     <header className="mainHeader">
       <ul>
@@ -19,7 +28,7 @@ function Navbar() {
           </a>
         </li>
         <li className="headerButton">
-          <a href="/">Login</a>
+          {isLoggedIn ? <a href="/">Logout</a> : <a href="/">Login</a>}
         </li>
       </ul>
     </header>

@@ -40,5 +40,14 @@ export interface EventInput {
   created_at: string;
 }
 
+export interface LoginType {
+  email: string;
+  password: string;
+}
+export interface LoginInput {
+  email: string;
+  password: string;
+}
+
 export interface EventModel extends EventType, Document {}
 export interface UserModel extends UserType, Document {}
