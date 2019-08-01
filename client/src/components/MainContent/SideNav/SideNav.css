@@ -7,4 +7,5 @@
   right: 0;
   border-left: 1px solid #e6ecf5;
   /* z-index: 9999999999; */
+  box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
 }
