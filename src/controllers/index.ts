@@ -43,8 +43,11 @@ export async function loginUser(userInput: LoginInput) {
   } else {
     isUser = true;
   }
-  const token = jwt.sign({ email: userInput.email }, 'privateKey', {
-    expiresIn: '1d'
+  const token = jwt.sign(
+    { email: userInput.email },
+    `${process.env.JWT_SECRET_KEY}`,
+    {
+      expiresIn: '1d'
   });
   return { isUser, token };
 }
