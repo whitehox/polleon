@@ -1,0 +1,11 @@
+.sideNav {
+  position: fixed;
+  left: 0;
+  background: #fff;
+  width: 270px;
+  height: 100%;
+  z-index: 999;
+  box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+  left: -200px;
+  border-right: 1px solid #e6ecf5;
+}

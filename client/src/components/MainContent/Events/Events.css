@@ -1,0 +1,10 @@
+.eventMason {
+  width: 92%;
+  height: fit-content;
+  margin: 20px auto;
+  columns: 2;
+}
+.eventMason div {
+  width: 100% !important;
+  break-inside: avoid;
+}

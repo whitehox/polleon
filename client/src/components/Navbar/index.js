@@ -12,6 +12,7 @@ function Navbar() {
 
   return (
     <header className="mainHeader">
+      <input type="text" placeholder="Search for events" />
       <ul>
         <li>
           <a href="/">Home</a>

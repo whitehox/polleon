@@ -45,7 +45,7 @@ async function loginUser(userInput) {
     else {
         isUser = true;
     }
-    const token = jsonwebtoken_1.default.sign({ email: userInput.email }, 'privateKey', {
+    const token = jsonwebtoken_1.default.sign({ email: userInput.email }, `${process.env.JWT_SECRET_KEY}`, {
         expiresIn: '1d'
     });
     return { isUser, token };

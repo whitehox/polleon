@@ -48,6 +48,7 @@ export async function loginUser(userInput: LoginInput) {
     `${process.env.JWT_SECRET_KEY}`,
     {
       expiresIn: '1d'
-  });
+    }
+  );
   return { isUser, token };
 }
