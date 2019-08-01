@@ -22,7 +22,7 @@ function Login() {
 
   const cardStyle = {
     width: '70%',
-    margin: '30px auto 0 auto',
+    margin: '0 auto 0 auto',
     background: '#FFF',
     boxShadow: '0 22px 80px rgba(0, 0, 0, 0.19)',
     borderRadius: '4px',
