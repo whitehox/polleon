@@ -18,10 +18,6 @@ function LoginForm(props) {
     const data = await props.loginUser({
       variables: { email, password }
     });
-    localStorage.setItem(
-      'userData',
-      JSON.stringify(data.data.userLogin.authUser)
-    );
     localStorage.setItem('token', data.data.userLogin.token);
     setIsLoggedIn(true);
   };
