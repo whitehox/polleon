@@ -23,7 +23,7 @@ function LoginForm(props) {
   };
 
   useEffect(() => {
-    const userData = localStorage.getItem('userData');
+    const userData = localStorage.getItem('token');
     if (userData) {
       setIsLoggedIn(true);
     }
