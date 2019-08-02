@@ -2,7 +2,7 @@
  * GraphQL user schema types
  */
 
-import { GraphQLObjectType, GraphQLID } from 'graphql';
+import { GraphQLObjectType, GraphQLID, GraphQLBoolean } from 'graphql';
 import { GraphQLString } from 'graphql';
 import { GraphQLInputObjectType } from 'graphql';
 import { getSingleUser } from '../controllers';
@@ -121,6 +121,10 @@ export const UserInput = new GraphQLInputObjectType({
     phone_number: {
       type: GraphQLString,
       description: 'The users phone number'
+    },
+    account_type: {
+      type: GraphQLBoolean,
+      description: 'The user account type'
     },
     password: {
       type: GraphQLString,
