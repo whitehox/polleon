@@ -119,6 +119,10 @@ exports.UserInput = new graphql_3.GraphQLInputObjectType({
             type: graphql_2.GraphQLString,
             description: 'The users phone number'
         },
+        account_type: {
+            type: graphql_1.GraphQLBoolean,
+            description: 'The user account type'
+        },
         password: {
             type: graphql_2.GraphQLString,
             description: 'The users password'

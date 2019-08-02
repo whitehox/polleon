@@ -37,7 +37,6 @@ async function loginUser(userInput) {
     const user = await getSingleUser({ email: userInput.email });
     let isUser;
     // let errorMessage;
-    //@ts-ignore
     if (!password_hash_1.default.verify(userInput.password, user.password)) {
         // errorMessage = 'The user name or password is incorrect';
         throw new Error('The user name or password is incorrect');
@@ -45,7 +44,7 @@ async function loginUser(userInput) {
     else {
         isUser = true;
     }
-    const token = jsonwebtoken_1.default.sign({ email: userInput.email }, `${process.env.JWT_SECRET_KEY}`, {
+    const token = jsonwebtoken_1.default.sign({ email: userInput.email, id: user._id, username: user.username }, `${process.env.JWT_SECRET_KEY}`, {
         expiresIn: '1d'
     });
     return { isUser, token };
