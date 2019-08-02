@@ -6,6 +6,7 @@ export const REGISTER = gql`
     $lastname: String!
     $username: String!
     $email: String!
+    $account_type: Boolean!
     $password: String!
     $created_at: String!
   ) {
@@ -15,6 +16,7 @@ export const REGISTER = gql`
         lastname: $lastname
         username: $username
         email: $email
+        account_type: $account_type
         password: $password
         created_at: $created_at
       }
@@ -23,6 +25,7 @@ export const REGISTER = gql`
       lastname
       username
       email
+      account_type
       password
       created_at
     }
