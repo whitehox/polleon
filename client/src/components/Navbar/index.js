@@ -32,6 +32,15 @@ function Navbar() {
           {isLoggedIn ? <a href="/">Logout</a> : <a href="/">Login</a>}
         </li>
       </ul>
+      {isLoggedIn ? (
+        <div className="profileImage">
+          <div className="dropDown" />
+          <img alt="profile" src="./assets/img/eugenio.jpg" />
+          <i className="mdi mdi-chevron-down" />
+        </div>
+      ) : (
+        ''
+      )}
     </header>
   );
 }
