@@ -36,7 +36,6 @@ export async function loginUser(userInput: LoginInput) {
   const user: any = await getSingleUser({ email: userInput.email });
   let isUser;
   // let errorMessage;
-  //@ts-ignore
   if (!hash.verify(userInput.password, user.password)) {
     // errorMessage = 'The user name or password is incorrect';
     throw new Error('The user name or password is incorrect');
