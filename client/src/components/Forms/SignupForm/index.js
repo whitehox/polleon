@@ -12,6 +12,7 @@ function SignupForm(props) {
   const [email, setemail] = useState('');
   const [checked, setchecked] = useState(false);
   const [created_at, setCreatedAt] = useState(new Date().toLocaleString());
+  const [account_type, setAccountType] = useState(false);
 
   const [input, setIntup] = useState({});
   useEffect(() => {
@@ -22,10 +23,20 @@ function SignupForm(props) {
       username,
       password: hash.generate(password),
       email,
+      account_type,
       checked,
       created_at
     });
-  }, [firstname, lastname, username, password, email, checked, created_at]);
+  }, [
+    firstname,
+    lastname,
+    username,
+    password,
+    email,
+    checked,
+    account_type,
+    created_at
+  ]);
 
   const submitFormHandler = e => {
     e.preventDefault();
