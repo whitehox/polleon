@@ -62,3 +62,21 @@
   height: 100%;
   border-radius: 50%;
 }
+.dropDown {
+  position: fixed;
+  top: 60px;
+  width: 150px;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+  border-radius: 4px;
+}
+.dropDown::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  left: 40%;
+}
