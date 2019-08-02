@@ -33,7 +33,7 @@ export async function addUser(userInput: UserType) {
 }
 
 export async function loginUser(userInput: LoginInput) {
-  const user = await getSingleUser({ email: userInput.email });
+  const user: any = await getSingleUser({ email: userInput.email });
   let isUser;
   // let errorMessage;
   //@ts-ignore
