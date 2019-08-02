@@ -79,6 +79,7 @@ function SignupForm(props) {
           onChange={e => setemail(e.target.value)}
           defaultValue={email}
         />
+        <label htmlFor="type">Would you be creating events?</label>
         <input
           type="password"
           name="password"
@@ -87,6 +88,15 @@ function SignupForm(props) {
           defaultValue={password}
         />
         <div>
+          <input
+            type="checkbox"
+            id="type"
+            name="type"
+            onChange={e => setAccountType(e.target.checked)}
+            defaultChecked={checked}
+          />{' '}
+          <label htmlFor="type">Would you be creating events?</label>
+          {'   '}
           <input
             type="checkbox"
             id="terms"
