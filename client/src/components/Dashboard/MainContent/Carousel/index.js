@@ -2,8 +2,8 @@ import React from 'react';
 
 import './Carousel.css';
 
-function Carousel() {
-  return <div id="carousel" />;
+function Carousel(props) {
+  return <div id="carousel">{props.children}</div>;
 }
 
 export default Carousel;
