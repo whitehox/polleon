@@ -135,6 +135,7 @@ p.eventDes {
   margin-bottom: 25px;
   overflow: hidden;
   position: relative;
+  max-height: 830px;
 }
 .eventThumb img {
   width: 100%;
