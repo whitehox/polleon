@@ -1,11 +1,57 @@
-.sideNav {
+#sideNav {
   position: fixed;
   left: 0;
   background: #fff;
   width: 270px;
   height: 100%;
-  z-index: 999;
+  z-index: 9999999999;
   box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
-  left: -200px;
   border-right: 1px solid #e6ecf5;
+  display: flex;
+  padding-top: 70px;
+  -webkit-transition: 300ms linear;
+  -moz-transition: 300ms linear;
+  -o-transition: 300ms linear;
+  -ms-transition: 300ms linear;
+  transition: 300ms linear;
+}
+.itemsIcon {
+  width: 70px;
+  height: 100%;
+  text-align: center;
+  padding-top: 10px;
+}
+.sideNavItems {
+  width: 200px;
+  height: 100%;
+  padding-top: 10px;
+}
+.itemsIcon ul li {
+  padding: 7px 20px;
+  cursor: pointer;
+}
+.itemsIcon i {
+  color: #9a9fbf;
+  font-size: 22px;
+}
+.sideNavItems a {
+  text-decoration: none;
+}
+.sideNavItems ul li {
+  color: #9a9fbf;
+  font-size: 0.812rem;
+  font-weight: 700;
+  display: block;
+  padding: 13px 0;
+  cursor: pointer;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.itemsIcon ul li i:hover,
+.sideNavItems ul li:hover {
+  color: #fb4267;
 }

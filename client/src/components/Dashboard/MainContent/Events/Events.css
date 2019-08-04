@@ -186,6 +186,7 @@ p.eventDes {
   font-weight: 700;
   border-radius: 0.3rem;
   outline: none;
+  cursor: pointer;
 }
 .btn-primary {
   background-color: #fb4267;

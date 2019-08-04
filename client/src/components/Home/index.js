@@ -4,7 +4,7 @@ import './Home.css';
 
 import Navbar from '../Navbar';
 import SideNav from '../SideNav';
-import MainContent from '../MainContent';
+import MainContent from '..//Dashboard/MainContent';
 
 function Home() {
   return (
