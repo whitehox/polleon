@@ -2,7 +2,7 @@
   position: fixed;
   left: 0;
   background: #fff;
-  width: 270px;
+  width: 70px;
   height: 100%;
   z-index: 9999999999;
   box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
@@ -25,6 +25,7 @@
   width: 200px;
   height: 100%;
   padding-top: 10px;
+  display: none;
 }
 .itemsIcon ul li {
   padding: 7px 20px;

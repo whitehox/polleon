@@ -9,29 +9,29 @@ function SideNav() {
     e.preventDefault();
     if (!navState) {
       document.getElementById('sideNav').style.left = '-270px';
-      document.querySelector('.sideNavItems').classList.add('hide');
-      document.getElementById('sideNav').style.width = '70px';
       document
         .querySelector('.sideNavToggler i')
-        .classList.remove('mdi-backburger');
+        .classList.remove('mdi-forwardburger');
       document
         .querySelector('.sideNavToggler i')
-        .classList.add('mdi-forwardburger');
+        .classList.add('mdi-backburger');
+      document.getElementById('sideNav').style.width = '270px';
       setTimeout(() => {
+        document.querySelector('.sideNavItems').classList.add('show');
         document.getElementById('sideNav').style.left = '0px';
       }, 300);
     } else {
       document.getElementById('sideNav').style.left = '-270px';
-      document.getElementById('sideNav').style.width = '270px';
+      document.getElementById('sideNav').style.width = '70px';
       document
         .querySelector('.sideNavToggler i')
-        .classList.add('mdi-backburger');
+        .classList.add('mdi-forwardburger');
       document
         .querySelector('.sideNavToggler i')
-        .classList.remove('mdi-forwardburger');
+        .classList.remove('mdi-backburger');
 
       setTimeout(() => {
-        document.querySelector('.sideNavItems').classList.remove('hide');
+        document.querySelector('.sideNavItems').classList.remove('show');
         document.getElementById('sideNav').style.left = '0px';
       }, 300);
     }
@@ -41,7 +41,7 @@ function SideNav() {
       <div className="itemsIcon">
         <ul>
           <li className="sideNavToggler" onClick={sideNavCollapseHandler}>
-            <i className="mdi mdi-backburger" />
+            <i className="mdi mdi-forwardburger" />
           </li>
           <a href="/">
             <li>
