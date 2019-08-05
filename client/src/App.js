@@ -8,6 +8,7 @@ import { ApolloProvider } from 'react-apollo';
 
 import Home from './components/Home';
 import Login from './components/Login/index';
+import AddEvent from './components/AddEvent';
 
 const client = new ApolloClient({
   uri: 'http://localhost:3005/graphql'
@@ -20,6 +21,7 @@ const App = () => {
         <Router>
           <Route path="/" exact component={Home} />
           <Route path="/login" component={Login} />
+          <Route path="/addevent" component={AddEvent} />
         </Router>
       </>
     </ApolloProvider>

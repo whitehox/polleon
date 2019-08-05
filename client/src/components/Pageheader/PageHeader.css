@@ -1,0 +1,55 @@
+#pageHeader {
+  width: 100%;
+  height: 230px;
+  position: relative;
+  background-position: 50% 50%;
+  padding: 70px 0 70px 0;
+  margin: 0 auto 30px;
+}
+/* position: absolute; */
+.headerBannerDisplay {
+  width: 100%;
+  height: 100%;
+  background: url('../img/top-header.png') repeat 0 0;
+  animation: slide 100s linear infinite;
+  will-change: background-position;
+  background-size: auto;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20px 0;
+  background-size: cover;
+}
+.headerBannerDisplay h1 {
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 5px 0 10px 0;
+}
+.headerBannerDisplay p {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #fff;
+}
+.pageHeaderText {
+  width: 66.66666%;
+  margin: 0 auto;
+}
+.imgBottom {
+  position: relative;
+  display: block;
+  margin: 76px auto 0;
+  margin-bottom: -70px;
+}
+@keyframes slide {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -4000px 0;
+  }
+}
