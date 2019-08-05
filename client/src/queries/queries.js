@@ -8,7 +8,6 @@ export const REGISTER = gql`
     $email: String!
     $isPolleon: Boolean!
     $password: String!
-    $created_at: String!
   ) {
     addUsers(
       input: {
@@ -18,7 +17,6 @@ export const REGISTER = gql`
         email: $email
         isPolleon: $isPolleon
         password: $password
-        created_at: $created_at
       }
     ) {
       firstname
@@ -27,7 +25,6 @@ export const REGISTER = gql`
       email
       isPolleon
       password
-      created_at
     }
   }
 `;
