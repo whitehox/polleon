@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const graphql_1 = require("graphql");
 const graphql_2 = require("graphql");
 const graphql_3 = require("graphql");
+const graphql_iso_date_1 = require("graphql-iso-date");
 const controllers_1 = require("../controllers");
 exports.UserType = new graphql_1.GraphQLObjectType({
     name: 'UserType',
@@ -46,13 +47,14 @@ exports.UserType = new graphql_1.GraphQLObjectType({
             type: graphql_2.GraphQLString,
             description: 'The users password'
         },
-        account_type: {
+        isPolleon: {
             type: graphql_2.GraphQLString,
             description: 'The user account type'
         },
         created_at: {
-            type: graphql_2.GraphQLString,
-            description: 'Date the account was created'
+            type: graphql_iso_date_1.GraphQLDate,
+            description: 'Date the account was created',
+            resolve: () => new Date()
         }
     })
 });
@@ -119,7 +121,7 @@ exports.UserInput = new graphql_3.GraphQLInputObjectType({
             type: graphql_2.GraphQLString,
             description: 'The users phone number'
         },
-        account_type: {
+        isPolleon: {
             type: graphql_1.GraphQLBoolean,
             description: 'The user account type'
         },
@@ -128,7 +130,7 @@ exports.UserInput = new graphql_3.GraphQLInputObjectType({
             description: 'The users password'
         },
         created_at: {
-            type: graphql_2.GraphQLString,
+            type: graphql_iso_date_1.GraphQLDate,
             description: 'Date the account was created'
         }
     })
