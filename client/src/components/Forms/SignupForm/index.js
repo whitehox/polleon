@@ -11,32 +11,20 @@ function SignupForm(props) {
   let [password, setpassword] = useState('');
   const [email, setemail] = useState('');
   const [checked, setchecked] = useState(false);
-  const [created_at, setCreatedAt] = useState(new Date().toLocaleString());
-  const [account_type, setAccountType] = useState(false);
+  const [isPolleon, setIsPolleon] = useState(false);
 
   const [input, setIntup] = useState({});
   useEffect(() => {
-    setCreatedAt(new Date().toLocaleString());
     setIntup({
       firstname,
       lastname,
       username,
       password: hash.generate(password),
       email,
-      account_type,
-      checked,
-      created_at
+      isPolleon,
+      checked
     });
-  }, [
-    firstname,
-    lastname,
-    username,
-    password,
-    email,
-    checked,
-    account_type,
-    created_at
-  ]);
+  }, [firstname, lastname, username, password, email, checked, isPolleon]);
 
   const submitFormHandler = e => {
     e.preventDefault();
@@ -92,7 +80,7 @@ function SignupForm(props) {
             type="checkbox"
             id="type"
             name="type"
-            onChange={e => setAccountType(e.target.checked)}
+            onChange={e => setIsPolleon(e.target.checked)}
             defaultChecked={checked}
           />{' '}
           <label htmlFor="type">Would you be creating events?</label>
