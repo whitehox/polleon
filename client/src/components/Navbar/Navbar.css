@@ -1,10 +1,13 @@
 .mainHeader {
   width: 100%;
-  height: 100px;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #fff;
+  border-bottom: 1px solid #f1f1f1;
+  position: fixed;
+  z-index: 999999999999999;
 }
 .mainHeader ul li {
   display: inline-block;
@@ -15,13 +18,14 @@
   color: #252525;
   padding: 0 20px;
   text-decoration: none;
+  font-weight: 500;
 }
 .mainHeader ul li a i {
-  color: #cd2244;
+  color: #e02f52;
 }
 .mainHeader ul li.headerButton a {
-  color: #cd2244;
-  border: 2px solid #cd2244;
+  color: #e02f52;
+  border: 2px solid #e02f52;
   transition: all 0.4s;
   padding: 5px 30px !important;
   border-radius: 28px;
@@ -30,6 +34,105 @@
 }
 .mainHeader ul li.headerButton a:hover {
   color: #fff;
-  background: #cd2244;
+  background: #e02f52;
   transition: all linear 0.2s;
+}
+.mainHeader input {
+  height: 100%;
+  display: block;
+  outline: none;
+  padding: 0 20px;
+  font-size: 12px;
+  background: #f9f9fd;
+  border: none;
+  flex: 0 0 20%;
+}
+.profileImage {
+  height: 50px;
+  position: relative;
+  border-radius: 50%;
+  margin-left: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profileImage img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.profileImage span {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.dropDown {
+  position: fixed;
+  top: 65px;
+  width: 200px;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+  border-radius: 4px;
+}
+.dropDown::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  left: 72%;
+}
+.dropHeading {
+  color: #9a9fbf;
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 9px;
+  font-weight: 700;
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+}
+.dropDown ul li {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 10px;
+  display: flex;
+  color: #515365;
+  align-items: center;
+}
+.dropDown ul li i {
+  color: #9a9fbf;
+  padding-right: 5px;
+  font-size: 14px;
+}
+.onlineStatus {
+  width: 100%;
+  display: block;
+  height: 30px;
+  outline: none;
+  border: none;
+  border: 1px solid #f1f1f1;
+  padding: 0 0 0 10px;
+  border-radius: 4px;
+}
+.onlineStatus input[type='text'] {
+  width: 70%;
+  background: #fff;
+  padding: 0;
+  display: inline-block;
+  height: auto;
+}
+.onlineStatus button {
+  background: #32e4cd;
+  width: 30%;
+  height: 100%;
+  outline: none;
+  text-align: center;
+  border: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.onlineStatus button i {
+  color: #fff !important;
 }

@@ -6,8 +6,8 @@ export const REGISTER = gql`
     $lastname: String!
     $username: String!
     $email: String!
+    $isPolleon: Boolean!
     $password: String!
-    $created_at: String!
   ) {
     addUsers(
       input: {
@@ -15,16 +15,31 @@ export const REGISTER = gql`
         lastname: $lastname
         username: $username
         email: $email
+        isPolleon: $isPolleon
         password: $password
-        created_at: $created_at
       }
     ) {
       firstname
       lastname
       username
       email
+      isPolleon
       password
-      created_at
+    }
+  }
+`;
+
+export const LOGIN = gql`
+  mutation userLogin($email: String!, $password: String!) {
+    userLogin(input: { email: $email, password: $password }) {
+      token
+      email
+      authUser {
+        username
+        email
+        lastname
+        firstname
+      }
     }
   }
 `;

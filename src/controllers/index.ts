@@ -1,7 +1,10 @@
 import Event from '../models/events';
 import User from '../models/users';
+import hash from 'password-hash';
 
-import { EventInput, UserType } from '../typings';
+import jwt from 'jsonwebtoken';
+
+import { EventInput, UserType, LoginInput } from '../typings';
 
 export function getEvents() {
   return Event.find();
@@ -27,4 +30,25 @@ export async function addUser(userInput: UserType) {
   }
   const user = new User(userInput);
   return user.save();
+}
+
+export async function loginUser(userInput: LoginInput) {
+  const user: any = await getSingleUser({ email: userInput.email });
+  let isUser;
+  // let errorMessage;
+  if (!hash.verify(userInput.password, user.password)) {
+    // errorMessage = 'The user name or password is incorrect';
+    throw new Error('The user name or password is incorrect');
+  } else {
+    isUser = true;
+  }
+
+  const token = jwt.sign(
+    { email: userInput.email, id: user._id, username: user.username },
+    `${process.env.JWT_SECRET_KEY}`,
+    {
+      expiresIn: '1d'
+    }
+  );
+  return { isUser, token };
 }

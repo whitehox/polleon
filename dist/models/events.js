@@ -7,12 +7,12 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const EventSchema = new mongoose_1.default.Schema({
     title: String,
     description: String,
-    start_date: Date,
-    end_date: Date,
+    start_date: String,
+    end_date: String,
     votes_per_contestant: Number,
     event_type: String,
     category_id: String,
-    created_at: Date
+    created_at: { type: Date, default: new Date() }
 });
 exports.default = mongoose_1.default.model('Event', EventSchema);
 //# sourceMappingURL=events.js.map

@@ -41,6 +41,27 @@ const mutation = new graphql_1.GraphQLObjectType({
             description: 'Add user',
             args: { input: { type: users_1.UserInput, description: 'The user information' } },
             resolve: (_, args) => controllers_1.addUser(args.input)
+        },
+        userLogin: {
+            type: users_1.LoginType,
+            description: 'User login',
+            args: {
+                input: { type: users_1.LoginInput, description: 'The login input type' }
+            },
+            resolve: async (_, args) => {
+                const result = await controllers_1.loginUser({
+                    email: args.input.email,
+                    password: args.input.password
+                });
+                let message;
+                if (result.isUser === true) {
+                    message = result.token;
+                }
+                else {
+                    message = 'Your email or password is incorrect';
+                }
+                return { message, email: args.input.email };
+            }
         }
     })
 });

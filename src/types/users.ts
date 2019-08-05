@@ -2,9 +2,11 @@
  * GraphQL user schema types
  */
 
-import { GraphQLObjectType, GraphQLID } from 'graphql';
+import { GraphQLObjectType, GraphQLID, GraphQLBoolean } from 'graphql';
 import { GraphQLString } from 'graphql';
 import { GraphQLInputObjectType } from 'graphql';
+import { GraphQLDate } from 'graphql-iso-date';
+import { getSingleUser } from '../controllers';
 
 export const UserType = new GraphQLObjectType({
   name: 'UserType',
@@ -45,13 +47,14 @@ export const UserType = new GraphQLObjectType({
       type: GraphQLString,
       description: 'The users password'
     },
-    account_type: {
+    isPolleon: {
       type: GraphQLString,
       description: 'The user account type'
     },
     created_at: {
-      type: GraphQLString,
-      description: 'Date the account was created'
+      type: GraphQLDate,
+      description: 'Date the account was created',
+      resolve: () => new Date()
     }
   })
 });
@@ -121,13 +124,65 @@ export const UserInput = new GraphQLInputObjectType({
       type: GraphQLString,
       description: 'The users phone number'
     },
+    isPolleon: {
+      type: GraphQLBoolean,
+      description: 'The user account type'
+    },
     password: {
       type: GraphQLString,
       description: 'The users password'
     },
     created_at: {
-      type: GraphQLString,
+      type: GraphQLDate,
       description: 'Date the account was created'
+    }
+  })
+});
+
+export const LoginType = new GraphQLObjectType({
+  name: 'LoginType',
+  description: 'The user Login type',
+  fields: () => ({
+    email: {
+      type: GraphQLString,
+      description: 'The user email address for login'
+    },
+    lastname: {
+      type: GraphQLString,
+      description: 'The users lastname'
+    },
+    username: {
+      type: GraphQLString,
+      description: 'The users username'
+    },
+    token: {
+      type: GraphQLString,
+      description: 'The authorized token',
+      resolve: (parent, _args) => {
+        return parent.message;
+      }
+    },
+    authUser: {
+      type: UserType,
+      description: 'The authorized user',
+      resolve: (parent, _args) => {
+        return getSingleUser({ email: parent.email });
+      }
+    }
+  })
+});
+
+export const LoginInput = new GraphQLInputObjectType({
+  name: 'LoginInput',
+  description: 'The user Login type',
+  fields: () => ({
+    email: {
+      type: GraphQLString,
+      description: 'The user email address for login'
+    },
+    password: {
+      type: GraphQLString,
+      description: 'The user password for login'
     }
   })
 });

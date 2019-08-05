@@ -5,9 +5,17 @@ import {
   addEvent,
   addUser,
   getSingleUser,
-  getUsers
+  getUsers,
+  loginUser
 } from './controllers';
-import { UserType, UserInput, EmailType, EmailInput } from './types/users';
+import {
+  UserType,
+  UserInput,
+  EmailType,
+  EmailInput,
+  LoginType,
+  LoginInput
+} from './types/users';
 
 const query = new GraphQLObjectType({
   name: 'PolleonQuery',
@@ -47,6 +55,26 @@ const mutation = new GraphQLObjectType({
       description: 'Add user',
       args: { input: { type: UserInput, description: 'The user information' } },
       resolve: (_, args) => addUser(args.input)
+    },
+    userLogin: {
+      type: LoginType,
+      description: 'User login',
+      args: {
+        input: { type: LoginInput, description: 'The login input type' }
+      },
+      resolve: async (_, args) => {
+        const result = await loginUser({
+          email: args.input.email,
+          password: args.input.password
+        });
+        let message;
+        if (result.isUser === true) {
+          message = result.token;
+        } else {
+          message = 'Your email or password is incorrect';
+        }
+        return { message, email: args.input.email };
+      }
     }
   })
 });

@@ -7,7 +7,8 @@ import {
   GraphQLString,
   GraphQLID,
   GraphQLInputObjectType,
-  GraphQLNonNull
+  GraphQLNonNull,
+  GraphQLInt
 } from 'graphql';
 
 export const EventType = new GraphQLObjectType({
@@ -38,8 +39,8 @@ export const EventType = new GraphQLObjectType({
       type: GraphQLString,
       description: 'The end date of the event'
     },
-    votes_per_contestants: {
-      type: GraphQLString,
+    votes_per_contestant: {
+      type: GraphQLInt,
       description: 'Votes allowed per contestant'
     },
     event_type: {
@@ -78,8 +79,8 @@ export const EventInput = new GraphQLInputObjectType({
       type: GraphQLString,
       description: 'The end date of the event'
     },
-    votes_per_contestants: {
-      type: GraphQLString,
+    votes_per_contestant: {
+      type: GraphQLInt,
       description: 'Votes allowed per contestant'
     },
     event_type: {

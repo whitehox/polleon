@@ -20,7 +20,7 @@ export interface UserType {
   email: string;
   phone_number?: string;
   password: string;
-  account_Type: string;
+  isPolleon: string;
   created_at: string;
 }
 
@@ -38,6 +38,15 @@ export interface EventInput {
   event_type: string;
   category_id: string;
   created_at: string;
+}
+
+export interface LoginType {
+  email: string;
+  password: string;
+}
+export interface LoginInput {
+  email: string;
+  password: string;
 }
 
 export interface EventModel extends EventType, Document {}
