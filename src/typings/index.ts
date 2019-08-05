@@ -20,7 +20,7 @@ export interface UserType {
   email: string;
   phone_number?: string;
   password: string;
-  account_Type: string;
+  isPolleon: string;
   created_at: string;
 }
 

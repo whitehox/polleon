@@ -46,13 +46,14 @@ export const UserType = new GraphQLObjectType({
       type: GraphQLString,
       description: 'The users password'
     },
-    account_type: {
+    isPolleon: {
       type: GraphQLString,
       description: 'The user account type'
     },
     created_at: {
-      type: GraphQLString,
-      description: 'Date the account was created'
+      type: GraphQLDate,
+      description: 'Date the account was created',
+      resolve: () => new Date()
     }
   })
 });
@@ -122,7 +123,7 @@ export const UserInput = new GraphQLInputObjectType({
       type: GraphQLString,
       description: 'The users phone number'
     },
-    account_type: {
+    isPolleon: {
       type: GraphQLBoolean,
       description: 'The user account type'
     },
@@ -131,7 +132,7 @@ export const UserInput = new GraphQLInputObjectType({
       description: 'The users password'
     },
     created_at: {
-      type: GraphQLString,
+      type: GraphQLDate,
       description: 'Date the account was created'
     }
   })
