@@ -5,6 +5,7 @@
 import { GraphQLObjectType, GraphQLID, GraphQLBoolean } from 'graphql';
 import { GraphQLString } from 'graphql';
 import { GraphQLInputObjectType } from 'graphql';
+import { GraphQLDate } from 'graphql-iso-date';
 import { getSingleUser } from '../controllers';
 
 export const UserType = new GraphQLObjectType({
