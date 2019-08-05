@@ -9,7 +9,7 @@ const EventSchema = new mongoose.Schema({
   votes_per_contestant: Number,
   event_type: String,
   category_id: String,
-  created_at: String
+  created_at: { type: Date, default: new Date() }
 });
 
 export default mongoose.model<EventModel>('Event', EventSchema);

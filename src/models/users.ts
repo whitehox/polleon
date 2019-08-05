@@ -11,8 +11,8 @@ const UserSchema = new mongoose.Schema(
     email: { type: String, required: true },
     phone_number: String,
     password: { type: String, required: true },
-    account_type: String,
-    created_at: String
+    isPolleon: String,
+    created_at: { type: Date, default: new Date() }
   },
   {
     versionKey: false
